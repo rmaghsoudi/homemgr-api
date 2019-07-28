@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :api, :path => "", :constraints => {:subdomain => "api"} do
+  namespace :api do
       resources :users
       resources :chores
       resources :occupants
