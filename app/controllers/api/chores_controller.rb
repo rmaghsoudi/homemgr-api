@@ -1,4 +1,4 @@
-class Api::V1::ChoresController < ApplicationController
+class Api::ChoresController < ApplicationController
   before_action :set_chore, only: %i[show update destroy]
 
   def index

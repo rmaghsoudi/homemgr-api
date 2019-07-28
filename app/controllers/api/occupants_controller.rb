@@ -1,4 +1,4 @@
-class Api::V1::OccupantsController < ApplicationController
+class Api::OccupantsController < ApplicationController
   before_action :set_occupant, only: %i[show update destroy]
 
   def index

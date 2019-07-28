@@ -1,4 +1,4 @@
-class Api::V1::GroceryItemsController < ApplicationController
+class Api::GroceryItemsController < ApplicationController
   before_action :set_item, only: %i[show update destroy]
 
   def index
