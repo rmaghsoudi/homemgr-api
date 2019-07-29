@@ -29,7 +29,7 @@ class Api::ChoresController < ApplicationController
  
   private
 
-  def set_user
+  def set_chore
     @chore = Chore.find(params[:id])
   end
 
