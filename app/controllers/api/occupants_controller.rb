@@ -15,7 +15,7 @@ class Api::OccupantsController < ApplicationController
   end
 
   def create
-      @occupant = Occupant.create(occupant_params)
+      @occupant = Occupant.new(occupant_params)
       if @occupant.save
         render json: @occupant
       else
@@ -34,6 +34,6 @@ class Api::OccupantsController < ApplicationController
   end
 
   def occupant_params
-    params.require(:occupant).permit(:first_name, :last_name, :image, :user_id)
+    params.require(:occupant).permit(:first_name, :last_name, :user_id)
   end
 end
