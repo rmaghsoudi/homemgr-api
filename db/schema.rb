@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_155338) do
 
   create_table "grocery_items", force: :cascade do |t|
     t.string "category"
-    t.string "name"
+    t.string "title"
     t.string "image"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_grocery_items_on_user_id"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2019_07_18_155338) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "first_name"

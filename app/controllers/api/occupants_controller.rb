@@ -8,7 +8,7 @@ class Api::OccupantsController < ApplicationController
 
   def update
     if @occupant.update(occupant_params)
-      render json: @occupant
+      render json: { user: UserSerializer.new(@user) }, status: :ok
     else
       render json: @occupant.errors, status: :unprocessable_entity
     end
@@ -17,7 +17,7 @@ class Api::OccupantsController < ApplicationController
   def create
       @occupant = Occupant.new(occupant_params)
       if @occupant.save
-        render json: @occupant
+        render json: { user: UserSerializer.new(@user) }, status: :ok
       else
         render json: { error: 'failed to create occupant' }, status: :unprocessable_entity
       end
@@ -25,6 +25,7 @@ class Api::OccupantsController < ApplicationController
 
   def destroy
    @occupant.destroy
+   render json: { user: UserSerializer.new(@user) }, status: :ok
   end
  
   private
@@ -34,6 +35,6 @@ class Api::OccupantsController < ApplicationController
   end
 
   def occupant_params
-    params.require(:occupant).permit(:first_name, :last_name, :user_id)
+    params.require(:occupant).permit(:first_name, :last_name, :user_id, :relationship)
   end
 end

@@ -15,9 +15,9 @@ class Api::GroceryItemsController < ApplicationController
   end
 
   def create
-      @item = GroceryItem.create(item_params)
+      @item = GroceryItem.new(item_params)
       if @item.save
-        render json: @item
+        render json: { user: UserSerializer.new(@user) }, status: :ok
       else
         render json: { error: 'failed to create item' }, status: :unprocessable_entity
       end
@@ -25,6 +25,8 @@ class Api::GroceryItemsController < ApplicationController
 
   def destroy
    @item.destroy
+   render json: { user: UserSerializer.new(@user) }, status: :ok
+  #  render json: { message: "Item was Deleted Successfully"}
   end
  
   private
@@ -34,6 +36,6 @@ class Api::GroceryItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:grocery_item).permit(:name, :category, :image, :user_id)
+    params.require(:grocery_item).permit(:title, :category, :image, :user_id)
   end
 end
