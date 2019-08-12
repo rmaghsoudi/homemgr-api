@@ -36,6 +36,6 @@ class Api::GroceryItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:grocery_item).permit(:title, :category, :image, :user_id)
+    params.require(:grocery_item).permit(:title, :category, :image, :user_id, :quantity)
   end
 end

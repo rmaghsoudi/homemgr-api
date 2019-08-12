@@ -3,6 +3,7 @@ class CreateGroceryItems < ActiveRecord::Migration[5.2]
     create_table :grocery_items do |t|
       t.string :category
       t.string :title
+      t.integer :quantity
       t.string :image
       t.belongs_to :user
 

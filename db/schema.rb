@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_155338) do
   create_table "grocery_items", force: :cascade do |t|
     t.string "category"
     t.string "title"
+    t.integer "quantity"
     t.string "image"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_grocery_items_on_user_id"
