@@ -14,15 +14,6 @@ chore1 = Chore.create!(title: 'Get Groceries', complete: true, description: 'we 
 chore1 = Chore.create!(title: 'Clean Living Room', complete: false, description: 'sweep and mop the floor, then vacuum the carpet', user_id: romy.id, occupant_id: jojo.id, due: DateTime.now)
 chore1 = Chore.create!(title: 'Water the cactus', complete: true, description: 'pretty self explanatory', user_id: romy.id, occupant_id: Occupant.first.id, due: DateTime.now)
 chore2 = Chore.create!(title: 'Laundry', complete: false, description: 'wash and dry all of the dark clothes', user_id: romy.id, occupant_id: Occupant.first.id, due: DateTime.now)
-5.times do
-   GroceryItem.create!(category: 'Fresh Produce', title: Faker::Food.fruits, user_id: romy.id, image: "http://lorempixel.com/200/200", quantity: 1)
-end
-5.times do
-  GroceryItem.create!(category: 'Fresh Produce', title: Faker::Food.vegetables, user_id: romy.id, image: "http://lorempixel.com/200/200", quantity: 2)
-end
-item1 = GroceryItem.create!(category: 'Cleaning', title: 'Fabuloso', user_id: romy.id, image: "http://lorempixel.com/200/200", quantity: 4)
-item2 = GroceryItem.create!(category: 'Cleaning', title: 'Chlorox Wipes', user_id: romy.id, image: "http://lorempixel.com/200/200", quantity: 2)
-item3 = GroceryItem.create!(category: 'Cleaning', title: 'Window Cleaner', user_id: romy.id, image: "http://lorempixel.com/200/200", quantity: 5)
 
 
 
